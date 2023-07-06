@@ -1,0 +1,24 @@
+Test-Command: /usr/share/cargo/bin/cargo-auto-test semver 1.0.14 --all-targets --all-features
+Features: test-name=rust-semver:@
+Depends: dh-cargo (>= 18), @
+Restrictions: allow-stderr, skip-not-installable
+
+Test-Command: /usr/share/cargo/bin/cargo-auto-test semver 1.0.14 --all-targets 
+Features: test-name=librust-semver-dev:default
+Depends: dh-cargo (>= 18), @
+Restrictions: allow-stderr, skip-not-installable
+
+Test-Command: /usr/share/cargo/bin/cargo-auto-test semver 1.0.14 --all-targets --no-default-features --features std
+Features: test-name=librust-semver-dev:std
+Depends: dh-cargo (>= 18), @
+Restrictions: allow-stderr, skip-not-installable
+
+Test-Command: /usr/share/cargo/bin/cargo-auto-test semver 1.0.14 --all-targets --no-default-features
+Features: test-name=librust-semver-dev:
+Depends: dh-cargo (>= 18), @
+Restrictions: allow-stderr, skip-not-installable
+
+Test-Command: /usr/share/cargo/bin/cargo-auto-test semver 1.0.14 --all-targets --no-default-features --features serde
+Features: test-name=librust-semver+serde-dev:serde
+Depends: dh-cargo (>= 18), @
+Restrictions: allow-stderr, skip-not-installable
